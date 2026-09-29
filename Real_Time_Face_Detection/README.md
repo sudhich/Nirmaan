@@ -101,6 +101,12 @@ Run:
 python main.py
 ```
 # If error
+# unstall by thease command
+python -m pip uninstall opencv-python -y
+python -m pip uninstall opencv-contrib-python -y
+# Then Install this
+python -m pip install opencv-python==4.10.0.84
+# You can check the version
 python -c "import cv2; print(cv2.__version__); print(hasattr(cv2, 'CascadeClassifier'))"
 ## output:
 4.10.0
