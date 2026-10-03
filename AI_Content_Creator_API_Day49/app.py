@@ -45,47 +45,47 @@ def generate():
         if content_type == "Text":
 
             prompt = f"""
-Create high-quality educational content about:
+            Create high-quality educational content about:
 
-{topic}
+            {topic}
 
-Use simple English.
-Include:
-- A clear title
-- Introduction
-- Headings
-- Bullet points where useful
-- Practical examples
-"""
+            Use simple English.
+            Include:
+            - A clear title
+            - Introduction
+            - Headings
+            - Bullet points where useful
+            - Practical examples
+            """
 
         elif content_type == "Presentation":
 
             prompt = f"""
-Create a 10-slide presentation about:
+            Create a 10-slide presentation about:
 
-{topic}
+            {topic}
 
-For every slide provide:
-- Slide title
-- 3 to 5 concise bullet points
-"""
+            For every slide provide:
+            - Slide title
+            - 3 to 5 concise bullet points
+            """
 
         elif content_type == "Image":
 
             prompt = f"""
-Create a detailed AI image-generation prompt based on:
+            Create a detailed AI image-generation prompt based on:
 
-{topic}
+            {topic}
 
-Include:
-- Subject
-- Environment
-- Composition
-- Lighting
-- Visual style
-- Important details
-- Aspect ratio
-"""
+            Include:
+            - Subject
+            - Environment
+            - Composition
+            - Lighting
+            - Visual style
+            - Important details
+            - Aspect ratio
+            """
 
         else:
 
