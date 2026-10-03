@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Content Creator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<header>
+<h1>AI CONTENT CREATOR</h1>
+<p>Text, Image & Presentation Generation</p>
+</header>
+
+<section class="card">
+<label for="topic">Topic:</label>
+<input id="topic" type="text" value="Artificial Intelligence in India"
+       placeholder="Enter your topic">
+
+<label for="contentType">Content Type:</label>
+<select id="contentType">
+<option value="Text">Text</option>
+<option value="Image">Image Prompt</option>
+<option value="Presentation">Presentation</option>
+</select>
+
+<button id="generateBtn" onclick="generateContent()">Generate Content</button>
+</section>
+
+<section class="output-card">
+<div class="output-title">
+<h2>Generated Content</h2>
+<button class="copy" onclick="copyContent()">Copy</button>
+</div>
+<div id="status"></div>
+<pre id="output">Artificial Intelligence is...</pre>
+</section>
+
+<footer>Day 49 • AI Content Creation</footer>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
