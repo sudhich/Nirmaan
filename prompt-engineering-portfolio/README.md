@@ -1,5 +1,5 @@
 # Prompt Engineering Portfolio
-
+A Prompt Engineering Portfolio is a collection of your best prompt-based projects.
 A practical portfolio demonstrating prompt engineering techniques and real-world LLM applications.
 
 ## Projects
