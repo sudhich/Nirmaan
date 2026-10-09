@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini AI Content Creator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>✨ Gemini AI Content Creator</h1>
+        <p>Create AI-powered content using the Gemini API.</p>
+    </header>
+
+    <section class="card">
+        <label for="topic">Topic</label>
+        <textarea id="topic" placeholder="Example: Benefits of learning Python"></textarea>
+
+        <label for="contentType">Content Type</label>
+        <select id="contentType">
+            <option>Text</option>
+            <option>Blog Post</option>
+            <option>Social Media Post</option>
+            <option>Study Notes</option>
+            <option>Professional Email</option>
+            <option>Short Explanation</option>
+        </select>
+
+        <button onclick="generateContent()">Generate with Gemini</button>
+        <p id="status"></p>
+    </section>
+
+    <section class="card">
+        <h2>Generated Content</h2>
+        <div id="output">Your generated content will appear here.</div>
+    </section>
+</div>
+
+<script>
+async function generateContent() {
+    const topic = document.getElementById("topic").value.trim();
+    const content_type = document.getElementById("contentType").value;
+    const output = document.getElementById("output");
+    const status = document.getElementById("status");
+
+    if (!topic) {
+        status.textContent = "Please enter a topic.";
+        return;
+    }
+
+    status.textContent = "Generating...";
+    output.textContent = "";
+
+    try {
+        const response = await fetch("/generate", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({topic, content_type})
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            output.textContent = data.error;
+            status.textContent = "Generation failed.";
+            return;
+        }
+
+        output.textContent = data.content;
+        status.textContent = "Generated successfully.";
+    } catch (error) {
+        status.textContent = "Something went wrong.";
+        output.textContent = error.message;
+    }
+}
+</script>
+</body>
+</html>
