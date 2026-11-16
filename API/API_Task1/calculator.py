@@ -60,3 +60,4 @@ def calculator_api(data: Calculator):
 #     "b": 10,
 #     "operation": "multiply"
 # }
+#curl -X POST "http://127.0.0.1:8000/calculator" -H "Content-Type: application/json" -d "{\"a\":6,\"b\":4,\"operation\":\"multiply\"}"
